@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="TestApp" />
+
+    <script>
+      if (location.protocol !== "https:") {
+        location.protocol = "https:";
+      }
+    </script>
+
+
+    <title>TestApp</title>
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#F4F4F4">
+    <meta name="theme-color" content="#F4F4F4">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="testapp.css" />
+    <script src="testapp.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>TestApp</h1>
+
+      <p>
+        <button id="fullscreen" type="button">Enter full screen</button>
+        <button id="lock" type="button">Activate keyboard lock</button>
+      </p>
+
+      <div class="info">Captured nothing</div>
+    </main>
+  </body>
+</html>

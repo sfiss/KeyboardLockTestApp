@@ -1,0 +1,32 @@
+
+  :root {
+    color-scheme: dark light;
+  }
+  
+  html {
+    display: flex;
+    justify-content: center;  
+  }
+  
+  body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 2em;   
+  }
+  
+  main {
+    max-width: 500px;
+  }
+  
+  button {
+    display: block;
+    margin-block: 1rem;
+    width: 100%;
+  }
+  
+  p, div {
+    margin-block-end: 2.5rem;
+  }
+  
+  .info {
+    white-space: pre;
+  }
