@@ -19,9 +19,9 @@
   const ENTER_FULLSCREEN = "Enter full screen";
   const LEAVE_FULLSCREEN = "Leave full screen";
   const ACTIVATE_KEYBOARD_LOCK = "Activate keyboard lock";
-  const DEACTIVATE_KEYBOARD_LOCK = "Dectivate keyboard lock";
+  const DEACTIVATE_KEYBOARD_LOCK = "Deactivate keyboard lock";
   const ACTIVATE_MOUSE_LOCK = "Activate mouse lock";
-  const DEACTIVATE_MOUSE_LOCK = "Dectivate mouse lock";
+  const DEACTIVATE_MOUSE_LOCK = "Deactivate mouse lock";
   
   let fullscreen = false;
   let keyboardLock = false;
@@ -75,7 +75,7 @@
     console.log('mouse lock: ' + mouseLock + ' -> ' + !mouseLock);
     try {
       if (!mouseLock) {
-        document.requestPointerLock();
+        body.requestPointerLock();
         mouseLock = true;
         mouseButton.textContent = DEACTIVATE_MOUSE_LOCK;
       } else {
@@ -91,7 +91,14 @@
   });
 
   document.addEventListener("pointerlockchange", () => {
-    console.log('pointerlockchange');
+    console.log('pointerlockchange ' + mouseLock);
+    const isMouseLocked = 
+      document.pointerLockElement === body ||
+      document.mozPointerLockElement === body;
+    if(!isMouseLocked) {
+      mouseLock = false;
+      mouseButton.textContent = ACTIVATE_MOUSE_LOCK;
+    }
   });
 
   document.addEventListener("pointerlockerror", () => {
